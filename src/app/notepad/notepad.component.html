@@ -1,0 +1,31 @@
+<p>notepad works!</p>
+
+<table class="table-bordered tablePlayer">
+    <thead>
+        <tr class="headHead">
+            <td>Spieler</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="headRow">
+            <td>Einer</td>        
+        </tr>
+        <tr class="headRow">
+            <td>Zweier</td>        
+        </tr>
+        <tr class="headRow">
+            <td>Dreier</td>        
+        </tr>
+        <tr class="headRow">
+            <td>Vierer</td>        
+        </tr>
+        <tr class="headRow">
+            <td>Fünfer</td>        
+        </tr>
+        <tr class="headRow">
+            <td>Sechser</td>        
+        </tr>
+    </tbody>
+</table>
+
+<app-player *ngFor="let p of players" [player]="p"></app-player>

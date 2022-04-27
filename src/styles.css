@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+
+.tablePlayer {
+    float:left;
+}
+.playerHead {
+    font-weight: bold; 
+}
+
+.playerRow {
+    text-align: center;
+    height: 2em;
+}
+.headRow {
+    background-color: lightgray;
+    height: 2em;
+}
