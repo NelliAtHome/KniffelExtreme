@@ -7,6 +7,7 @@ import { MenuComponent } from './menu/menu.component';
 import { NewGameComponent } from './new-game/new-game.component';
 import { NotepadComponent } from './notepad/notepad.component';
 import { PlayerComponent } from './player/player.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { PlayerComponent } from './player/player.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

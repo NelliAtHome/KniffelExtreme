@@ -16,6 +16,8 @@ export class NotepadComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    // this.game.init();
+    // this.game.addPlayer('Peter');
   }
 
 }

@@ -1,3 +1,25 @@
+<ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Sechser</h4>
+    </div>
+    <div class="modal-body">
+      <form>
+        <div class="mb-3">
+          <button type="button" class="btn btn-success mybtn" (click)="modal.close(6)">6</button>
+          <button type="button" class="btn btn-success mybtn" (click)="modal.close(12)">12</button>
+          <button type="button" class="btn btn-success mybtn" (click)="modal.close(18)">18</button>
+          <button type="button" class="btn btn-success mybtn" (click)="modal.close(24)">24</button>
+          <button type="button" class="btn btn-success mybtn" (click)="modal.close(30)">30</button>
+          <button type="button" class="btn btn-success mybtn" (click)="modal.close(36)">36</button>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-primary" (click)="modal.close(null)">Leeren</button>
+      <button type="button" class="btn btn-danger" (click)="modal.close(0)">Streichen</button>
+    </div>
+  </ng-template>
+
 <table class="table-bordered tablePlayer">
     <thead>
         <tr class="playerHead">
@@ -21,7 +43,7 @@
             <td>{{player.Fuenfer}}</td>
         </tr>
         <tr class="playerRow">
-            <td (click)="onSechser()">{{player.Sechser}}</td>
+            <td (click)="onSechser(content)">{{player.Sechser}}</td>
         </tr>
         <tr class="playerRow">
             <td>{{player.Summe}}</td>
