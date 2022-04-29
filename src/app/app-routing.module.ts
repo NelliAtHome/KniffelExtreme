@@ -4,6 +4,7 @@ import { MenuComponent } from './menu/menu.component';
 import { NewGameComponent } from './new-game/new-game.component';
 import { NotepadComponent } from './notepad/notepad.component';
 
+
 const routes: Routes = [
     { path: '', component: MenuComponent},
     { path: 'newgame', component: NewGameComponent},

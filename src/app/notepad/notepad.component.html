@@ -1,5 +1,3 @@
-<p>notepad works!</p>
-
 <table class="table-bordered tablePlayer">
     <thead>
         <tr class="headHead">
@@ -25,7 +23,11 @@
         <tr class="headRow">
             <td>Sechser</td>        
         </tr>
+        <tr class="headRow">
+            <td>Summe</td>        
+        </tr>
+
     </tbody>
 </table>
 
-<app-player *ngFor="let p of players" [player]="p"></app-player>
+<app-player *ngFor="let p of game.players" [player]="p"></app-player>

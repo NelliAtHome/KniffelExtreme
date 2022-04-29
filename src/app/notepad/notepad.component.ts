@@ -1,6 +1,6 @@
 import { ParseTreeResult } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
-import { Player } from '../entities';
+import { GameService } from '../game.service';
 
 @Component({
   selector: 'app-notepad',
@@ -9,15 +9,13 @@ import { Player } from '../entities';
 })
 export class NotepadComponent implements OnInit {
 
-  players: Array<Player> = [];
+  game: GameService;
 
-  constructor() { }
+  constructor(game: GameService) { 
+    this.game = game;
+  }
 
   ngOnInit(): void {
-    let player: Player = {Name: 'Peter', Einer: 3};
-    this.players.push(player);
-    player = {Name: 'Maili', Einer: 4};
-    this.players.push(player);
   }
 
 }

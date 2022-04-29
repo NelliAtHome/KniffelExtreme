@@ -21,9 +21,10 @@
             <td>{{player.Fuenfer}}</td>
         </tr>
         <tr class="playerRow">
-            <td>{{player.Sechser}}</td>
+            <td (click)="onSechser()">{{player.Sechser}}</td>
         </tr>
-
-
+        <tr class="playerRow">
+            <td>{{player.Summe}}</td>
+        </tr>
     </tbody>
 </table>
