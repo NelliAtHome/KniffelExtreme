@@ -1,6 +1,6 @@
-import { ParseTreeResult } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { GameService } from '../game.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-notepad',
@@ -16,8 +16,11 @@ export class NotepadComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // this.game.init();
-    // this.game.addPlayer('Peter');
+    if (!environment.production) {
+      this.game.init();
+      this.game.addPlayer('Tester');
+      this.game.addPlayer('Tester2');
+    }
   }
 
 }

@@ -1,33 +1,177 @@
-<table class="table-bordered tablePlayer">
-    <thead>
-        <tr class="headHead">
-            <td>Spieler</td>
-        </tr>
-    </thead>
-    <tbody>
-        <tr class="headRow">
-            <td>Einer</td>        
-        </tr>
-        <tr class="headRow">
-            <td>Zweier</td>        
-        </tr>
-        <tr class="headRow">
-            <td>Dreier</td>        
-        </tr>
-        <tr class="headRow">
-            <td>Vierer</td>        
-        </tr>
-        <tr class="headRow">
-            <td>Fünfer</td>        
-        </tr>
-        <tr class="headRow">
-            <td>Sechser</td>        
-        </tr>
-        <tr class="headRow">
-            <td>Summe</td>        
-        </tr>
+<div class="container">
+    <div class="row">
+        <div class="col-5 headColumn">
+            <div class="table-responsive">
+                <table class="table table-bordered table-sm tablePlayer">
+                    <thead>
+                        <tr class="headHead">
+                            <td></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="headRow">
+                            <td>
+                                <div class="headName">Einser</div>
+                            </td>
+                        </tr>
+                        <tr class="headRow">
+                            <td>
+                                <div class="headName">Zweier</div>
+                            </td>
+                        </tr>
+                        <tr class="headRow">
+                            <td>
+                                <div class="headName">Dreier</div>
+                            </td>
+                        </tr>
+                        <tr class="headRow">
+                            <td>
+                                <div class="headName">Vierer</div>
+                            </td>
+                        </tr>
+                        <tr class="headRow">
+                            <td>
+                                <div class="headName">Fünfer</div>
+                            </td>
+                        </tr>
+                        <tr class="headRow">
+                            <td>
+                                <div class="headName">Sechser</div>
+                            </td>
+                        </tr>
+                        <tr class="headRow">
+                            <td>
+                                <div class="headName">Bonus</div>
+                            </td>
+                        </tr>
 
-    </tbody>
-</table>
+                        <tr class="headRow2">
+                            <td>
+                                <div class="headName">Dreierpasch</div>
+                                <div class="headInfo">Alle Augen zählen</div>
+                            </td>
+                        </tr>
 
-<app-player *ngFor="let p of game.players" [player]="p"></app-player>
+                        <tr class="headRow2">
+                            <td>
+                                <div class="headName">Viererpasch</div>
+                                <div class="headInfo">Alle Augen zählen</div>
+                            </td>
+                        </tr>
+
+                        <tr class="headRow2">
+                            <td>
+                                <div class="headName">Zwei Paare</div>
+                                <div class="headInfo">Alle Augen zählen</div>
+                            </td>
+                        </tr>
+
+                        <tr class="headRow2">
+                            <td>
+                                <div class="headName">Drei Paare</div>
+                                <div class="headInfo">35 Punkte</div>
+                            </td>
+                        </tr>
+
+                        <tr class="headRow2">
+                            <td>
+                                <div class="headName">Zwei Dreier</div>
+                                <div class="headInfo">45 Punkte</div>
+                            </td>
+                        </tr>
+
+                        <tr class="headRow2">
+                            <td>
+                                <div class="headName">Full-House</div>
+                                <div class="headInfo">25 Punkte</div>
+                            </td>
+                        </tr>
+
+                        <tr class="headRow2">
+                            <td>
+                                <div class="headName">Großes Full-House</div>
+                                <div class="headInfo">45 Punkte</div>
+                            </td>
+                        </tr>
+
+                        <tr class="headRow2">
+                            <td>
+                                <div class="headName">Kleine Straße</div>
+                                <div class="headInfo">30 Punkte</div>
+                            </td>
+                        </tr>
+
+                        <tr class="headRow2">
+                            <td>
+                                <div class="headName">Große Straße</div>
+                                <div class="headInfo">40 Punkte</div>
+                            </td>
+                        </tr>
+
+                        <tr class="headRow2">
+                            <td>
+                                <div class="headName">Highway</div>
+                                <div class="headInfo">50 Punkte</div>
+                            </td>
+                        </tr>
+
+                        <tr class="headRow2">
+                            <td>
+                                <div class="headName">Kniffel</div>
+                                <div class="headInfo">50 Punkte</div>
+                            </td>
+                        </tr>
+
+                        <tr class="headRow2">
+                            <td>
+                                <div class="headName">Kniffel Extreme</div>
+                                <div class="headInfo">75 Punkte</div>
+                            </td>
+                        </tr>
+
+                        <tr class="headRow2">
+                            <td>
+                                <div class="headName">10 oder weniger</div>
+                                <div class="headInfo">40 Punkte</div>
+                            </td>
+                        </tr>
+
+                        <tr class="headRow2">
+                            <td>
+                                <div class="headName">33 oder mehr</div>
+                                <div class="headInfo">40 Punkte</div>
+                            </td>
+                        </tr>
+
+                        <tr class="headRow2">
+                            <td>
+                                <div class="headName">Chance</div>
+                                <div class="headInfo">Alle Augen zählen</div>
+                            </td>
+                        </tr>
+
+                        <tr class="headRow2">
+                            <td>
+                                <div class="headName">Super Chance</div>
+                                <div class="headInfo">Alle Augen zählen x2</div>
+                            </td>
+                        </tr>
+
+                        <tr class="headRow">
+                            <td>
+                                <div class="headName">Summe</div>
+                            </td>
+                        </tr>
+
+
+
+
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <app-player class="col" *ngFor="let p of game.players" [player]="p"></app-player>
+    </div>
+</div>

@@ -7,5 +7,7 @@ export interface Player {
     Fuenfer?: number;
     Sechser?: number;
     Summe?: number;
-    Bonus?: number;
+
+    Bonus: string;
+    
 }

@@ -14,14 +14,15 @@ export class PlayerComponent implements OnInit {
 
   constructor(game: GameService, private modalService: NgbModal) {
     this.game = game;
-    this.player = {};
+    this.player = { Bonus: ""};
    }
 
   ngOnInit(): void {
   }
 
   onSechser(content: any) {
-    this.modalService.open(content, { size: 'sm' }).result.then((result) => {
+    const activeModal = this.modalService.open(content, { size: 'sm' });
+    activeModal.result.then((result) => {
       this.player.Sechser = result;
       this.game.calculate(this.player);
     });

@@ -3,15 +3,55 @@
 .tablePlayer {
     float:left;
 }
+
 .playerHead {
+    font-size: small;
     font-weight: bold; 
+    height: 30px;
 }
 
 .playerRow {
     text-align: center;
-    height: 2em;
+    height: 30px;
 }
+
+.playerRow2 {
+    text-align: center;
+    height: 42px;
+}
+
+.playerRowCalculated {
+    background-color: lightgray;
+}
+
+.headHead {
+    font-size: small;
+    height: 30px;
+}
+
 .headRow {
     background-color: lightgray;
-    height: 2em;
+    height: 30px;
+}
+
+.headRow2 {
+    background-color: lightgray;
+    height: 42px;
+}
+
+.headName {
+    font-size: small;
+    font-weight: bold;
+}
+.headInfo {
+    font-size: xx-small;
+}
+
+.headColumn {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.playerCell {
+    padding: 0 !important;
 }
