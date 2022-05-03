@@ -1,0 +1,18 @@
+<div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">{{target}}</h4>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="mb-3">
+        <button *ngFor="let s of possibleScores" type="button" class="btn btn-success mybtn" (click)="activeModal.close(s)">{{s}}</button>
+        <form *ngIf="possibleScores.length == 0">
+            <input type="text" id="score" name="score" class="form-control" [(ngModel)]="score">
+        </form>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button *ngIf="possibleScores.length == 0" type="button" class="btn btn-primary" (click)="activeModal.close(score)">Ok</button>
+    <button type="button" class="btn btn-secondary" (click)="activeModal.close(null)">Leeren</button>
+    <button type="button" class="btn btn-danger" (click)="activeModal.close(0)">Streichen</button>
+  </div>

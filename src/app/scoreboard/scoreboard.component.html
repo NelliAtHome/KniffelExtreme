@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
+    <div class="container-fluid">
+        <a class="navbar-brand" [routerLink]="'.'">Kniffel Extreme</a>
+
+        <button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
+            &#9776;
+        </button>
+
+        <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="'.'" (click)="isMenuCollapsed = true">Neues Spiel</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<table class="table table-bordered table-sm">
+    <tbody>
+        <tr>
+            <th></th>
+            <td class="text-center" *ngFor="let p of scoreboard.player">{{p.name}}</td>
+        </tr>
+        <tr *ngFor="let t of scoreboard.targets">
+            <th>
+                <div class="headName">{{t.name}}</div>
+                <div class="headInfo">{{t.info}}</div>
+            </th>
+            <td *ngFor="let f of t.fields" class="text-center" (click)="onClick(f)" >
+                <div>{{f.text}}{{f.score}}</div>
+            </td>
+        </tr>
+    </tbody>
+</table>

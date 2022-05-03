@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +11,8 @@ import { PlayerComponent } from './player/player.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { ScoreboardComponent } from './scoreboard/scoreboard.component';
+import { DialogScoreComponent } from './dialog-score/dialog-score.component';
 
 @NgModule({
   declarations: [
@@ -17,10 +20,13 @@ import { environment } from '../environments/environment';
     MenuComponent,
     NewGameComponent,
     NotepadComponent,
-    PlayerComponent
+    PlayerComponent,
+    ScoreboardComponent,
+    DialogScoreComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     NgbModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
