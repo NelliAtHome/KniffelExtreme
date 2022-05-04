@@ -9,7 +9,7 @@
         <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" [routerLink]="'.'" (click)="isMenuCollapsed = true">Neues Spiel</a>
+                    <a class="nav-link" [routerLink]="'./newgame'" (click)="isMenuCollapsed = true">Neues Spiel</a>
                 </li>
             </ul>
         </div>
@@ -30,7 +30,7 @@
                     <div class="headName">{{t.name}}</div>
                     <div class="headInfo">{{t.info}}</div>
                 </th>
-                <td *ngFor="let f of t.fields" class="text-center" (click)="onClick(f)">
+                <td *ngFor="let f of t.fields" class="text-center align-middle" (click)="onClick(f)">
                     <div>
                         {{f.text}}
                         <div *ngIf="f.score != 0; else elseBlock">{{f.score}}</div>

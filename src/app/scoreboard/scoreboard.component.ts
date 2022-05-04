@@ -1,6 +1,6 @@
 import { Component, OnInit, Type } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { Scoreboard, Target, Player2, Field, Nullable } from '../entities';
+import { Scoreboard, Target, Player, Field, Nullable } from '../entities';
 import { DialogScoreComponent } from '../dialog-score/dialog-score.component'
 
 const t_Einser = 0;
@@ -79,7 +79,7 @@ export class ScoreboardComponent implements OnInit {
 
   addPlayer(name: string) {
     var id = this.scoreboard.player.length;
-    var player: Player2 = {id: id, name: name, joker: 3};
+    var player: Player = {id: id, name: name, joker: 3};
     this.scoreboard.player[id] = player;
 
     this.scoreboard.targets.forEach(t => {

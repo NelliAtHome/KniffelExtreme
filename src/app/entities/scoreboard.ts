@@ -19,7 +19,7 @@ export interface Target {
 }
 
 // Ein Spieler
-export interface Player2 {
+export interface Player {
     id: number;
     name: string;
     joker: number;
@@ -27,6 +27,6 @@ export interface Player2 {
 
 // Der Punktezettel
 export interface Scoreboard {
-    player: Player2[];       // Die einzelnen Spieler
+    player: Player[];       // Die einzelnen Spieler
     targets: Target[];       // Die Zeilen
 }

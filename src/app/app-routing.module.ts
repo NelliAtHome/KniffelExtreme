@@ -1,20 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { MenuComponent } from './menu/menu.component';
-import { NewGameComponent } from './new-game/new-game.component';
-import { NotepadComponent } from './notepad/notepad.component';
 import { ScoreboardComponent } from './scoreboard/scoreboard.component';
+import { NewgameComponent } from './newgame/newgame.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
-/*
-const routes: Routes = [
-    { path: '', component: MenuComponent},
-    { path: 'newgame', component: NewGameComponent},
-    { path: 'notepad', component: NotepadComponent}
-];
-*/
 
 const routes: Routes = [
   { path: '', component: ScoreboardComponent},
+  { path: 'newgame', component: NewgameComponent},
 ];
 
 @NgModule({
