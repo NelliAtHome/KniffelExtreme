@@ -1,11 +1,43 @@
-.headName {
+table {
     font-size: small;
 }
+
+thead {
+    font-weight: bold;
+}
+
 .headInfo {
     font-size: xx-small;
 }
 
 .field {
     font-size: small;
+}
+
+thead, tbody tr {
+    display:table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+tbody {
+    display: block;
+    overflow-y: auto;
+    table-layout: fixed;
+    max-height: 75vh;
+}
+
+thead tr th,
+tbody tr th {
+    width: 130px;
+}
+
+.bonus {
+    background-color:antiquewhite;
+}
+
+.summe {
+    background-color:antiquewhite;
+    font-weight: bold;
 }
 

@@ -16,20 +16,28 @@
     </div>
 </nav>
 
-<table class="table table-bordered table-sm">
-    <tbody>
-        <tr>
-            <th></th>
-            <td class="text-center" *ngFor="let p of scoreboard.player">{{p.name}}</td>
-        </tr>
-        <tr *ngFor="let t of scoreboard.targets">
-            <th>
-                <div class="headName">{{t.name}}</div>
-                <div class="headInfo">{{t.info}}</div>
-            </th>
-            <td *ngFor="let f of t.fields" class="text-center" (click)="onClick(f)" >
-                <div>{{f.text}}{{f.score}}</div>
-            </td>
-        </tr>
-    </tbody>
-</table>
+<div class="container">
+    <table class="table table-bordered table-sm">
+        <thead>
+            <tr>
+                <th></th>
+                <td class="text-center" *ngFor="let p of scoreboard.player">{{p.name}}</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let t of scoreboard.targets" class="{{t.type}}">
+                <th>
+                    <div class="headName">{{t.name}}</div>
+                    <div class="headInfo">{{t.info}}</div>
+                </th>
+                <td *ngFor="let f of t.fields" class="text-center" (click)="onClick(f)">
+                    <div>
+                        {{f.text}}
+                        <div *ngIf="f.score != 0; else elseBlock">{{f.score}}</div>
+                        <ng-template #elseBlock>/</ng-template>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

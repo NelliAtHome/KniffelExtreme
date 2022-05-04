@@ -13,6 +13,20 @@ const t_Bonus = 6;
 const t_Dreierpasch = 7;
 const t_Viererpasch = 8;
 const t_ZweiPaare = 9;
+const t_DreiPaare = 10;
+const t_ZweiDreier = 11;
+const t_FullHouse = 12;
+const t_GroßesFullHouse = 13;
+const t_KleineStraße = 14;
+const t_GroßeStraße = 15;
+const t_Highway = 16;
+const t_Kniffel = 17;
+const t_KniffelExtreme = 18;
+const t_10oderWeniger = 19;
+const t_33oderMehr = 20;
+const t_Chance = 21;
+const t_SuperChance = 22;
+const t_Summe = 23;
 
 @Component({
   selector: 'app-scoreboard',
@@ -31,14 +45,29 @@ export class ScoreboardComponent implements OnInit {
     this.addTarget(t_Vierer, '', 'Vierer', '', [4,8,12,16,20,24]);
     this.addTarget(t_Fünfer, '', 'Fünfer', '', [5,10,15,20,25,30]);
     this.addTarget(t_Sechser, '', 'Sechser', '', [6,12,18,24,30,36]);
-    this.addTarget(t_Bonus, 'Bonus', 'Bonus', '', []);
+    this.addTarget(t_Bonus, 'bonus', 'Bonus', '', []);
     this.addTarget(t_Dreierpasch, '', 'Dreierpasch', 'Alle Augen zählen', []);
     this.addTarget(t_Viererpasch, '', 'Viererpasch', 'Alle Augen zählen', []);
     this.addTarget(t_ZweiPaare, '', 'Zwei Paare', 'Alle Augen zählen', []);
+    this.addTarget(t_DreiPaare, '', 'Drei Paare', '35 Punkte', [35]);
+    this.addTarget(t_ZweiDreier, '', 'Zwei Dreier', '45 Punkte', [45]);
+    this.addTarget(t_FullHouse, '', 'Full House', '25 Punkte', [25]);
+    this.addTarget(t_GroßesFullHouse, '', 'Großes Full-House', '45 Punkte', [45]);
+    this.addTarget(t_KleineStraße, '', 'Kleine Straße', '30 Punkte', [30]);
+    this.addTarget(t_GroßeStraße, '', 'Große Straße', '40 Punkte', [40]);
+    this.addTarget(t_Highway, '', 'Highway', '50 Punkte', [50]);
+    this.addTarget(t_Kniffel, '', 'Kniffel', '50 Punkte', [50]);
+    this.addTarget(t_KniffelExtreme, '', 'Kniffel Extreme', '75 Punkte', [75]);
+    this.addTarget(t_10oderWeniger, '', '10 oder weniger', '40 Punkte', [40]);
+    this.addTarget(t_33oderMehr, '', '33 oder mehr', '40 Punkte', [40]);
+    this.addTarget(t_Chance, '', 'Chance', 'Alle Augen zählen', []);
+    this.addTarget(t_SuperChance, '', 'Super Chance', 'Alle Augen zählen x2', []);
+    this.addTarget(t_Summe, 'summe', 'Summe', '', []);
 
     this.addPlayer('Maili');
     this.addPlayer('Peter');  
 }
+
 
   ngOnInit(): void {
   }
@@ -60,8 +89,8 @@ export class ScoreboardComponent implements OnInit {
   }
 
   onClick(f: Field){
-    if (f.targetId == t_Bonus) return;
-    
+    if (f.targetId == t_Bonus || f.targetId == t_Summe) return;
+
     const modalRef = this.modalService.open(DialogScoreComponent, { size: 'sm' });
     modalRef.result.then((result) => {
       this.setScore(f.playerId, f.targetId, result);
@@ -71,7 +100,7 @@ export class ScoreboardComponent implements OnInit {
     modalRef.componentInstance.possibleScores = this.scoreboard.targets[f.targetId].possibleScores;
   }
 
-  setScore(playerId: number, targetId: number, score: number) {
+  setScore(playerId: number, targetId: number, score: Nullable<number>) {
     this.scoreboard.targets[targetId].fields[playerId].score = score;
   }
   getScore(playerId: number, targetId: number): number {
@@ -79,7 +108,7 @@ export class ScoreboardComponent implements OnInit {
   }
   
   calculate(playerId: number) {
-    var sum = this.getScore(playerId, t_Einser)
+    var sum: number = this.getScore(playerId, t_Einser)
             + this.getScore(playerId, t_Zweier)
             + this.getScore(playerId, t_Dreier)
             + this.getScore(playerId, t_Vierer)
@@ -96,7 +125,25 @@ export class ScoreboardComponent implements OnInit {
       sum += 45;
     }
 
+    sum += Number(this.getScore(playerId, t_Dreierpasch))
+         + Number(this.getScore(playerId, t_Viererpasch))
+         + Number(this.getScore(playerId, t_ZweiPaare))
+         + Number(this.getScore(playerId, t_DreiPaare))
+         + Number(this.getScore(playerId, t_ZweiDreier))
+         + Number(this.getScore(playerId, t_FullHouse))
+         + Number(this.getScore(playerId, t_GroßesFullHouse))
+         + Number(this.getScore(playerId, t_KleineStraße))
+         + Number(this.getScore(playerId, t_GroßeStraße))
+         + Number(this.getScore(playerId, t_Highway))
+         + Number(this.getScore(playerId, t_Kniffel))
+         + Number(this.getScore(playerId, t_KniffelExtreme))
+         + Number(this.getScore(playerId, t_10oderWeniger))
+         + Number(this.getScore(playerId, t_33oderMehr))
+         + Number(this.getScore(playerId, t_Chance))
+         + Number(this.getScore(playerId, t_SuperChance));
 
+    if (sum == 0) this.setScore(playerId, t_Summe, null)
+    else this.setScore(playerId, t_Summe, sum);
 
   }
 
