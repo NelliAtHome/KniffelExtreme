@@ -3,19 +3,20 @@
 </div>
 <div class="modal-body">
   <form>
-    <div class="mb-3">
-      <button *ngFor="let s of possibleScores" type="button" class="btn btn-success mybtn"
-        (click)="activeModal.close(s)">{{s}}</button>
+    
+    <div class=""container>
+      <div class="row" *ngFor="let s of possibleScores">
+        <div class="col-12 text-center">
+          <button type="button" class="btn btn-success btnscore mb-2" (click)="activeModal.close(s)">{{s}}</button>
+        </div>
+      </div>
+
       <form *ngIf="possibleScores.length == 0">
         <div class="row">
           <div class="col">
             <input type="number" pattern="[0-9]*" inputmode="numeric" id="score" name="score" class="form-control"
               [(ngModel)]="score">
           </div>
-          <div class="col">
-            <button type="submit" class="btn btn-primary" (click)="activeModal.close(score)">Ok</button>
-          </div>
-
         </div>
       </form>
     </div>
@@ -24,4 +25,5 @@
 <div class="modal-footer">
   <button type="button" class="btn btn-secondary" (click)="activeModal.close(null)">Leeren</button>
   <button type="button" class="btn btn-danger" (click)="activeModal.close(0)">Streichen</button>
+  <button *ngIf="possibleScores.length == 0" type="submit" class="btn btn-primary" (click)="activeModal.close(score)">Ok</button>
 </div>

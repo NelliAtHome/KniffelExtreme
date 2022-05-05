@@ -9,14 +9,14 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { ScoreboardComponent } from './scoreboard/scoreboard.component';
 import { DialogScoreComponent } from './dialog-score/dialog-score.component';
-import { NewgameComponent } from './newgame/newgame.component';
+import { DialogNewgameComponent } from './dialog-newgame/dialog-newgame.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ScoreboardComponent,
     DialogScoreComponent,
-    NewgameComponent
+    DialogNewgameComponent,
   ],
   imports: [
     BrowserModule,

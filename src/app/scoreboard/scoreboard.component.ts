@@ -2,6 +2,7 @@ import { Component, OnInit, Type } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Scoreboard, Target, Player, Field, Nullable } from '../entities';
 import { DialogScoreComponent } from '../dialog-score/dialog-score.component'
+import { DialogNewgameComponent } from '../dialog-newgame/dialog-newgame.component';
 
 const t_Einser = 0;
 const t_Zweier = 1;
@@ -144,6 +145,22 @@ export class ScoreboardComponent implements OnInit {
 
     if (sum == 0) this.setScore(playerId, t_Summe, null)
     else this.setScore(playerId, t_Summe, sum);
+
+  }
+
+  onNewGame() {
+    this.isMenuCollapsed = true;
+
+    const modalRef = this.modalService.open(DialogNewgameComponent, { size: 'sm' });
+    modalRef.result.then((result) => {
+      
+    });
+    
+    var players: string[] = [];
+    this.scoreboard.player.forEach(p => {
+      players.push(p.name);
+    });
+    modalRef.componentInstance.players = players;
 
   }
 

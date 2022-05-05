@@ -9,7 +9,7 @@
         <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" [routerLink]="'./newgame'" (click)="isMenuCollapsed = true">Neues Spiel</a>
+                    <a class="nav-link" (click)="onNewGame()">Neues Spiel</a>
                 </li>
             </ul>
         </div>
