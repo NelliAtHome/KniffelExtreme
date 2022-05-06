@@ -10,6 +10,7 @@ import { environment } from '../environments/environment';
 import { ScoreboardComponent } from './scoreboard/scoreboard.component';
 import { DialogScoreComponent } from './dialog-score/dialog-score.component';
 import { DialogNewgameComponent } from './dialog-newgame/dialog-newgame.component';
+import { DialogPlayerComponent } from './dialog-player/dialog-player.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { DialogNewgameComponent } from './dialog-newgame/dialog-newgame.componen
     ScoreboardComponent,
     DialogScoreComponent,
     DialogNewgameComponent,
+    DialogPlayerComponent,
   ],
   imports: [
     BrowserModule,

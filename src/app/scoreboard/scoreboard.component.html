@@ -21,7 +21,10 @@
         <thead>
             <tr>
                 <th></th>
-                <td class="text-center" *ngFor="let p of scoreboard.player">{{p.name}}</td>
+                    <td class="text-center top" *ngFor="let p of scoreboard.player" (click)="onPlayerClick(p)">
+                        <div class="">{{p.name}}</div>
+                        <span class="dot" *ngFor="let x of [].constructor(p.joker)" ></span>
+                    </td>
             </tr>
         </thead>
         <tbody>

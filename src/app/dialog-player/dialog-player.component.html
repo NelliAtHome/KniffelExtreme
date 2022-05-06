@@ -1,0 +1,10 @@
+<div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">{{player!.name}}</h4>
+</div>
+<div class="modal-body">
+    <h4>Noch {{player!.joker}} Joker</h4>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="activeModal.close(false)">Abbrechen</button>
+    <button type="submit" class="btn btn-primary" (click)="activeModal.close(true)">Joker einsetzen</button>
+</div>

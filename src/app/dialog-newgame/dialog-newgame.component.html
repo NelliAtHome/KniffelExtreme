@@ -4,16 +4,16 @@
 <div class="modal-body">
     <div class="container">
         <form>
-            <div class="row mb-3">
-                <label for="inputNumberOfPlayer" class="col-4 col-form-label">Spieler</label>
-                <div class="col-8">
-                    <input type="number" class="form-control" id="inputNumberOfPlayer" name="InputNumberOfPlayer" [(ngModel)]="players.length">
+            <div class="row">
+                <div class="line" *ngFor="let n of [1,2,3,4,5,6]">
+                    <button class="btn btn-success" [ngClass]="{'active' : players.length == n}" (click)="onPlayers(n)">{{n}}</button>
                 </div>
             </div>
-            <div *ngFor="let player of players; let i = index"  class="row mb-3">
+            <br>
+            <div *ngFor="let player of players; let i = index;trackBy:trackByIdx" class="row mb-3">
                 <label class="col-4 col-form-label">Spieler {{i + 1}}</label>
                 <div class="col-8">
-                    <input type="text" class="form-control" [id]="'inputPlayer' + i" [name]="'inputPlayer' + i">
+                    <input type="text" class="form-control" [id]="'inputPlayer' + i" [name]="'inputPlayer' + i" [(ngModel)]="players[i]" >
                 </div>
             </div>
 
@@ -22,5 +22,5 @@
 </div>
 <div class="modal-footer">
     <button type="button" class="btn btn-secondary" (click)="activeModal.close(null)">Abbrechen</button>
-    <button type="submit" class="btn btn-primary" (click)="activeModal.close(0)">Neues Spiel starten</button>
+    <button type="submit" class="btn btn-primary" (click)="activeModal.close(players)">Neues Spiel starten</button>
 </div>

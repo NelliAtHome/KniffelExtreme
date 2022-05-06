@@ -3,6 +3,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Scoreboard, Target, Player, Field, Nullable } from '../entities';
 import { DialogScoreComponent } from '../dialog-score/dialog-score.component'
 import { DialogNewgameComponent } from '../dialog-newgame/dialog-newgame.component';
+import { DialogPlayerComponent } from '../dialog-player/dialog-player.component';
 
 const t_Einser = 0;
 const t_Zweier = 1;
@@ -153,15 +154,30 @@ export class ScoreboardComponent implements OnInit {
 
     const modalRef = this.modalService.open(DialogNewgameComponent, { size: 'sm' });
     modalRef.result.then((result) => {
-      
+      if (result != null) this.newGame(result);
     });
-    
-    var players: string[] = [];
-    this.scoreboard.player.forEach(p => {
-      players.push(p.name);
-    });
-    modalRef.componentInstance.players = players;
-
   }
+
+  newGame(newPlayer: string[]){
+    this.scoreboard.player = [];
+    this.scoreboard.targets.forEach(t => {
+      t.fields = [];
+    });
+    newPlayer.forEach(p => {
+      this.addPlayer(p);
+    });
+  }
+
+  onPlayerClick(player: Player) {
+
+    if (player.joker == 0) return;
+
+    const modalRef = this.modalService.open(DialogPlayerComponent, { size: 'sm' });
+    modalRef.result.then((result) => {
+      if (result && player.joker > 0) player.joker--;
+    });
+    modalRef.componentInstance.player = player;
+  }
+
 
 }

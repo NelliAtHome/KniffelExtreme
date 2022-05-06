@@ -1,5 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { Component, OnInit } from '@angular/core';
+import { NgbActiveModal, NgbTypeahead } from '@ng-bootstrap/ng-bootstrap';
+
+const player = ['Peter', 'Maili', 'Eva', 'René', 'Viola', 'Fabian'];
 
 @Component({
   selector: 'app-dialog-newgame',
@@ -8,13 +10,24 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class DialogNewgameComponent implements OnInit {
 
-  @Input() players: string[];
+  players: string[];
 
   constructor(public activeModal: NgbActiveModal) {
-    this.players = [];
+    this.players = ["",""];
    }
 
   ngOnInit(): void {
+  }
+
+  onPlayers(n: number){
+    this.players = [];
+    for (var i = 0;i < n;i++) {
+      this.players.push("");
+    }
+  }
+
+  trackByIdx(index: number, obj: any): any {
+    return index;
   }
 
 }
