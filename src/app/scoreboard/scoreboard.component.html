@@ -1,3 +1,4 @@
+<!--
 <nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
     <div class="container-fluid">
         <a class="navbar-brand" [routerLink]="'.'">Kniffel Extreme</a>
@@ -15,32 +16,35 @@
         </div>
     </div>
 </nav>
+-->
 
 <div class="container">
-    <table class="table table-bordered table-sm">
-        <thead>
-            <tr>
-                <th></th>
+    <div class="row">
+        <table class="table table-bordered table-sm">
+            <thead>
+                <tr>
+                    <th><button (click)="onNewGame()" class="btn btn-success">Neues Spiel</button></th>
                     <td class="text-center top" *ngFor="let p of scoreboard.player" (click)="onPlayerClick(p)">
                         <div class="">{{p.name}}</div>
-                        <span class="dot" *ngFor="let x of [].constructor(p.joker)" ></span>
+                        <span class="dot" *ngFor="let x of [].constructor(p.joker)"></span>
                     </td>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let t of scoreboard.targets" class="{{t.type}}">
-                <th>
-                    <div class="headName">{{t.name}}</div>
-                    <div class="headInfo">{{t.info}}</div>
-                </th>
-                <td *ngFor="let f of t.fields" class="text-center align-middle" (click)="onClick(f)">
-                    <div>
-                        {{f.text}}
-                        <div *ngIf="f.score != 0; else elseBlock">{{f.score}}</div>
-                        <ng-template #elseBlock>/</ng-template>
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let t of scoreboard.targets" class="{{t.type}}">
+                    <th>
+                        <div class="headName">{{t.name}}</div>
+                        <div class="headInfo">{{t.info}}</div>
+                    </th>
+                    <td *ngFor="let f of t.fields" class="text-center align-middle p-0 field" (click)="onClick(f)">
+                        <div>
+                            {{f.text}}
+                            <div *ngIf="f.score != 0; else elseBlock">{{f.score}}</div>
+                            <ng-template #elseBlock>/</ng-template>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>

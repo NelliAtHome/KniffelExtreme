@@ -4,6 +4,7 @@ import { Scoreboard, Target, Player, Field, Nullable } from '../entities';
 import { DialogScoreComponent } from '../dialog-score/dialog-score.component'
 import { DialogNewgameComponent } from '../dialog-newgame/dialog-newgame.component';
 import { DialogPlayerComponent } from '../dialog-player/dialog-player.component';
+import { environment } from 'src/environments/environment';
 
 const t_Einser = 0;
 const t_Zweier = 1;
@@ -66,8 +67,12 @@ export class ScoreboardComponent implements OnInit {
     this.addTarget(t_SuperChance, '', 'Super Chance', 'Alle Augen zählen x2', []);
     this.addTarget(t_Summe, 'summe', 'Summe', '', []);
 
-    this.addPlayer('Maili');
-    this.addPlayer('Peter');  
+    if (!environment.production) {
+      this.addPlayer('Spieler 1');
+      this.addPlayer('Spieler 2');
+    }
+
+    if (this.scoreboard.player.length == 0) this.onNewGame();
 }
 
 

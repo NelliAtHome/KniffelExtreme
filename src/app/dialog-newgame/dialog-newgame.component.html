@@ -3,7 +3,7 @@
 </div>
 <div class="modal-body">
     <div class="container">
-        <form>
+        <form #newForm="ngForm">
 
             <div class="row">
                 <div class="line" *ngFor="let n of [1,2,3,4,5,6]">
@@ -15,13 +15,7 @@
             <div *ngFor="let player of players; let i = index;trackBy:trackByIdx" class="row mb-3">
                 <label class="col-4 col-form-label">Spieler {{i + 1}}</label>
                 <div class="col-8">
-                    <input type="text" class="form-control" [id]="'inputPlayer' + i" [name]="'inputPlayer' + i" [(ngModel)]="players[i]" list="suggestions">
-                    <datalist id="suggestions">
-                        <option value="Maili">
-                        <option value="Peter">
-                        <option value="Eva">
-                        <option value="Viola">                            
-                    </datalist>
+                    <input type="text" class="form-control" [id]="'inputPlayer' + i" [name]="'inputPlayer' + i" [(ngModel)]="players[i]" required>
                 </div>
             </div>
 
@@ -30,5 +24,5 @@
 </div>
 <div class="modal-footer">
     <button type="button" class="btn btn-secondary" (click)="activeModal.close(null)">Abbrechen</button>
-    <button type="submit" class="btn btn-primary" (click)="activeModal.close(players)">Neues Spiel starten</button>
+    <button type="submit" class="btn btn-primary" (click)="activeModal.close(players)" [disabled]="newForm.form.invalid">Neues Spiel starten</button>
 </div>

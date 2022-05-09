@@ -7,11 +7,12 @@ thead {
 }
 
 .headInfo {
-    font-size: xx-small;
+    font-size: x-small;
 }
 
 .field {
-    font-size: small;
+    font-size: medium;
+    font-weight: bold;
 }
 
 thead, tbody tr {
@@ -24,7 +25,7 @@ tbody {
     display: block;
     overflow-y: auto;
     table-layout: fixed;
-    max-height: 75vh;
+    max-height: calc(100vh - 105px);
 }
 
 thead tr th,
