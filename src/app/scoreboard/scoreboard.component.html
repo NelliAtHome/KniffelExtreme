@@ -1,29 +1,14 @@
-<!--
-<nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
-    <div class="container-fluid">
-        <a class="navbar-brand" [routerLink]="'.'">Kniffel Extreme</a>
-
-        <button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">
-            &#9776;
-        </button>
-
-        <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" (click)="onNewGame()">Neues Spiel</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
--->
-
 <div class="container">
     <div class="row">
         <table class="table table-bordered table-sm">
             <thead>
                 <tr>
-                    <th><button (click)="onNewGame()" class="btn btn-success">Neues Spiel</button></th>
+                    <th class="text-center">
+                        <span class="hamburger" (click)="openNav()">
+                            &#9776;
+                        </span>
+                    </th>
+                    <!-- <th><button (click)="onNewGame()" class="btn btn-success">Neues Spiel</button></th> -->
                     <td class="text-center top" *ngFor="let p of scoreboard.player" (click)="onPlayerClick(p)">
                         <div class="">{{p.name}}</div>
                         <span class="dot" *ngFor="let x of [].constructor(p.joker)"></span>

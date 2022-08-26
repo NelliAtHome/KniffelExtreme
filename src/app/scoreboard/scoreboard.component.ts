@@ -4,6 +4,7 @@ import { Scoreboard, Target, Player, Field, Nullable } from '../entities';
 import { DialogScoreComponent } from '../dialog-score/dialog-score.component'
 import { DialogNewgameComponent } from '../dialog-newgame/dialog-newgame.component';
 import { DialogPlayerComponent } from '../dialog-player/dialog-player.component';
+import { DialogMenuComponent } from '../dialog-menu/dialog-menu.component';
 import { environment } from 'src/environments/environment';
 
 const t_Einser = 0;
@@ -38,7 +39,6 @@ const t_Summe = 23;
 })
 export class ScoreboardComponent implements OnInit {
 
-  public isMenuCollapsed = true;
   public scoreboard: Scoreboard = { player: [], targets: []};
 
   constructor(private modalService: NgbModal) {
@@ -67,14 +67,9 @@ export class ScoreboardComponent implements OnInit {
     this.addTarget(t_SuperChance, '', 'Super Chance', 'Alle Augen zählen x2', []);
     this.addTarget(t_Summe, 'summe', 'Summe', '', []);
 
-    if (!environment.production) {
-      this.addPlayer('Spieler 1');
-      this.addPlayer('Spieler 2');
-    }
-
+    this.restoreScoreBoard();
     if (this.scoreboard.player.length == 0) this.onNewGame();
 }
-
 
   ngOnInit(): void {
   }
@@ -152,11 +147,11 @@ export class ScoreboardComponent implements OnInit {
     if (sum == 0) this.setScore(playerId, t_Summe, null)
     else this.setScore(playerId, t_Summe, sum);
 
+    this.saveScoreBoard();
+
   }
 
   onNewGame() {
-    this.isMenuCollapsed = true;
-
     const modalRef = this.modalService.open(DialogNewgameComponent, { size: 'sm' });
     modalRef.result.then((result) => {
       if (result != null) this.newGame(result);
@@ -171,6 +166,8 @@ export class ScoreboardComponent implements OnInit {
     newPlayer.forEach(p => {
       this.addPlayer(p);
     });
+
+    this.saveScoreBoard();
   }
 
   onPlayerClick(player: Player) {
@@ -184,5 +181,22 @@ export class ScoreboardComponent implements OnInit {
     modalRef.componentInstance.player = player;
   }
 
+  saveScoreBoard() {
+    localStorage.setItem("CurrentScoreBoard", JSON.stringify(this.scoreboard));
+  }
+
+  restoreScoreBoard() {
+    var board = localStorage.getItem("CurrentScoreBoard")
+    if (board !== null){
+      this.scoreboard = JSON.parse(board);
+    }
+  }
+
+  openNav(){
+    const modalRef = this.modalService.open(DialogMenuComponent, { size: 'sm' });
+    modalRef.result.then((result) => {
+      if (result == "NewGame") this.onNewGame();
+    });
+  }
 
 }

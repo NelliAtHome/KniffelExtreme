@@ -56,3 +56,8 @@ tbody tr th {
       vertical-align: top;
   }
 
+  .hamburger {
+    font-size: 25px;
+    cursor: pointer;
+  }
+
