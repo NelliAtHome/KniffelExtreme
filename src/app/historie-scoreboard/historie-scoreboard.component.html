@@ -4,13 +4,12 @@
             <thead>
                 <tr>
                     <th class="text-center">
-                        <span class="hamburger" (click)="openNav()">
-                            &#9776;
+                        <span class="back" (click)="back()">
+                            <i class="bi bi-arrow-left"></i>
                         </span>
                     </th>
-                    <td class="text-center top" *ngFor="let p of scoreboard.player" (click)="onPlayerClick(p)">
+                    <td class="text-center top" *ngFor="let p of scoreboard.player">
                         <div class="">{{p.name}}</div>
-                        <span class="dot" *ngFor="let x of [].constructor(p.joker)"></span>
                     </td>
                 </tr>
             </thead>
@@ -18,9 +17,8 @@
                 <tr *ngFor="let t of scoreboard.targets" class="{{t.type}}">
                     <th>
                         <div class="headName">{{t.name}}</div>
-                        <div class="headInfo">{{t.info}}</div>
                     </th>
-                    <td *ngFor="let f of t.fields" class="text-center align-middle p-0 field" (click)="onClick(f)">
+                    <td *ngFor="let f of t.fields" class="text-center align-middle p-0 field">
                         <div>
                             {{f.text}}
                             <div *ngIf="f.score != 0; else elseBlock">{{f.score}}</div>

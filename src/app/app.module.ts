@@ -12,6 +12,15 @@ import { DialogScoreComponent } from './dialog-score/dialog-score.component';
 import { DialogNewgameComponent } from './dialog-newgame/dialog-newgame.component';
 import { DialogPlayerComponent } from './dialog-player/dialog-player.component';
 import { DialogMenuComponent } from './dialog-menu/dialog-menu.component';
+import { HistorieComponent } from './historie/historie.component';
+
+import { registerLocaleData } from '@angular/common';
+import localeDe from '@angular/common/locales/de';
+import {LOCALE_ID } from '@angular/core';
+import { HistorieScoreboardComponent } from './historie-scoreboard/historie-scoreboard.component';
+import { DialogFinishedComponent } from './dialog-finished/dialog-finished.component';
+
+registerLocaleData(localeDe);
 
 @NgModule({
   declarations: [
@@ -21,6 +30,9 @@ import { DialogMenuComponent } from './dialog-menu/dialog-menu.component';
     DialogNewgameComponent,
     DialogPlayerComponent,
     DialogMenuComponent,
+    HistorieComponent,
+    HistorieScoreboardComponent,
+    DialogFinishedComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +46,7 @@ import { DialogMenuComponent } from './dialog-menu/dialog-menu.component';
       registrationStrategy: 'registerWhenStable:30000'
     })
   ],
-  providers: [],
+  providers: [{provide: LOCALE_ID, useValue: 'de'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row">
+        <div class="d-flex justify-content-between">
+            <div>
+                <h4>Historie</h4>
+            </div>
+            <div><button type="button" class="btn-close" aria-label="Close" (click)="close()"></button></div>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <table class="table table-bordered table-sm">
+            <thead>
+                <tr>
+                    <td>Datum</td>
+                    <td>#</td>
+                    <td>Gewinner</td>
+                    <td>Punkte</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let h of history" (click)="showScoreboard(h.scoreboard)">
+                    <td>{{h.date | date: 'short'}}</td>
+                    <td>{{h.player}}</td>
+                    <td>{{h.winner}}</td>
+                    <td>{{h.points}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

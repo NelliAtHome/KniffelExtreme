@@ -1,0 +1,15 @@
+<div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Spielende</h4>
+</div>
+<div class="modal-body">
+    <table class="table table-bordered table-sm">
+        <tbody>
+            <tr *ngFor="let w of winners">
+                <td>{{w.rank}}</td>
+                <td>{{w.player}}</td>
+                <td>{{w.points}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+

@@ -16,7 +16,6 @@ export class DialogScoreComponent implements OnInit {
   constructor(public activeModal: NgbActiveModal) {
     this.target = '';
     this.possibleScores = [];
-   
   }
 
   ngOnInit(): void {
