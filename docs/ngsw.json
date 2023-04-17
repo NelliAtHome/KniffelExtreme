@@ -1,0 +1,87 @@
+{
+  "configVersion": 1,
+  "timestamp": 1681753903231,
+  "index": "/KniffelExtreme/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/KniffelExtreme/favicon.ico",
+        "/KniffelExtreme/index.html",
+        "/KniffelExtreme/main.5849f78393333c14.js",
+        "/KniffelExtreme/manifest.webmanifest",
+        "/KniffelExtreme/polyfills.40b4e472d589a414.js",
+        "/KniffelExtreme/runtime.ac4a52c3a2df4743.js",
+        "/KniffelExtreme/scripts.5a760000a5f57d40.js",
+        "/KniffelExtreme/styles.0e7416e0a0206734.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/KniffelExtreme/assets/icons/icon-128x128.png",
+        "/KniffelExtreme/assets/icons/icon-144x144.png",
+        "/KniffelExtreme/assets/icons/icon-152x152.png",
+        "/KniffelExtreme/assets/icons/icon-192x192.png",
+        "/KniffelExtreme/assets/icons/icon-384x384.png",
+        "/KniffelExtreme/assets/icons/icon-512x512.png",
+        "/KniffelExtreme/assets/icons/icon-72x72.png",
+        "/KniffelExtreme/assets/icons/icon-96x96.png",
+        "/KniffelExtreme/bootstrap-icons.6fdf98f9eb97d9e7.woff2",
+        "/KniffelExtreme/bootstrap-icons.dba5e3b77b478961.woff"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/KniffelExtreme/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "/KniffelExtreme/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "/KniffelExtreme/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "/KniffelExtreme/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "/KniffelExtreme/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/KniffelExtreme/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/KniffelExtreme/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "/KniffelExtreme/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "/KniffelExtreme/bootstrap-icons.6fdf98f9eb97d9e7.woff2": "3a284b0618771f29da8eb6be900e99439253dce0",
+    "/KniffelExtreme/bootstrap-icons.dba5e3b77b478961.woff": "a77e6a2f335f3fcb4f2930794907c88ed7de7ca1",
+    "/KniffelExtreme/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
+    "/KniffelExtreme/index.html": "2d28961dc3f8c52dcb5d77d4a0ecdad25993f164",
+    "/KniffelExtreme/main.5849f78393333c14.js": "aeccc7f0dcad7995fadfdcf91747dfe909447963",
+    "/KniffelExtreme/manifest.webmanifest": "d6c34fb64ee39c609df8643890e9f7e32d951c78",
+    "/KniffelExtreme/polyfills.40b4e472d589a414.js": "db3878eeed8e2a821eb19768b1e53a0c6ecf93a3",
+    "/KniffelExtreme/runtime.ac4a52c3a2df4743.js": "ce3ac48eebdb46ed41a395bf4d97c5fa6b1562e6",
+    "/KniffelExtreme/scripts.5a760000a5f57d40.js": "d51f44c4eb4b17e2c76195c5c7cc6415259bc0eb",
+    "/KniffelExtreme/styles.0e7416e0a0206734.css": "c3f4c3f423eaa4fa8a855680b1ff1cdb65202ac0"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
