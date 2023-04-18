@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1681834467627,
+  "timestamp": 1681835042990,
   "index": "/KniffelExtreme/index.html",
   "assetGroups": [
     {
@@ -30,7 +30,6 @@
         "ignoreVary": true
       },
       "urls": [
-        "/KniffelExtreme/assets/dice-solid-512.png",
         "/KniffelExtreme/assets/icons/icon-128x128.png",
         "/KniffelExtreme/assets/icons/icon-144x144.png",
         "/KniffelExtreme/assets/icons/icon-152x152.png",
@@ -47,7 +46,6 @@
   ],
   "dataGroups": [],
   "hashTable": {
-    "/KniffelExtreme/assets/dice-solid-512.png": "8a50f793cf258e6de1981296988660972e77b417",
     "/KniffelExtreme/assets/dice-solid.ico": "88c99239d355dad4a0dbffc29f8cb868cae90614",
     "/KniffelExtreme/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
     "/KniffelExtreme/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
@@ -61,7 +59,7 @@
     "/KniffelExtreme/bootstrap-icons.dba5e3b77b478961.woff": "a77e6a2f335f3fcb4f2930794907c88ed7de7ca1",
     "/KniffelExtreme/index.html": "15cc412ca9635836196c012911512a25f96fe6b9",
     "/KniffelExtreme/main.5849f78393333c14.js": "aeccc7f0dcad7995fadfdcf91747dfe909447963",
-    "/KniffelExtreme/manifest.webmanifest": "5ddfc3c2e99a0c5e1ef98c9ea69d4573161b03dc",
+    "/KniffelExtreme/manifest.webmanifest": "7fb165f322e354b59281f5e79614620e43799dd9",
     "/KniffelExtreme/polyfills.40b4e472d589a414.js": "db3878eeed8e2a821eb19768b1e53a0c6ecf93a3",
     "/KniffelExtreme/runtime.ac4a52c3a2df4743.js": "ce3ac48eebdb46ed41a395bf4d97c5fa6b1562e6",
     "/KniffelExtreme/scripts.5a760000a5f57d40.js": "d51f44c4eb4b17e2c76195c5c7cc6415259bc0eb",
