@@ -7,7 +7,7 @@
       "installMode": "prefetch",
       "resources": {
         "files": [
-          "/favicon.ico",
+          "/assets/dice-solid.ico",
           "/index.html",
           "/manifest.webmanifest",
           "/*.css",

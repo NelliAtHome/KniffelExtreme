@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1681832713963,
+  "timestamp": 1681833050694,
   "index": "/KniffelExtreme/index.html",
   "assetGroups": [
     {
@@ -11,6 +11,7 @@
         "ignoreVary": true
       },
       "urls": [
+        "/KniffelExtreme/assets/dice-solid.ico",
         "/KniffelExtreme/index.html",
         "/KniffelExtreme/main.5849f78393333c14.js",
         "/KniffelExtreme/manifest.webmanifest",
@@ -29,7 +30,6 @@
         "ignoreVary": true
       },
       "urls": [
-        "/KniffelExtreme/assets/dice-solid.ico",
         "/KniffelExtreme/assets/icons/icon-128x128.png",
         "/KniffelExtreme/assets/icons/icon-144x144.png",
         "/KniffelExtreme/assets/icons/icon-152x152.png",
