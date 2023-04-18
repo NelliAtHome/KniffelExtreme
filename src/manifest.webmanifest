@@ -8,7 +8,7 @@
   "start_url": "./",
   "icons": [
     {
-      "src": "assets//dice-solid-512.png",
+      "src": "assets/dice-solid-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable any"
