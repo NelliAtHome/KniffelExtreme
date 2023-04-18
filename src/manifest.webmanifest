@@ -1,6 +1,6 @@
 {
-  "name": "Kniffel",
-  "short_name": "Kniffel",
+  "name": "Kniffel Extreme",
+  "short_name": "Kniffel Extreme",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "standalone",
@@ -50,7 +50,7 @@
       "purpose": "maskable any"
     },
     {
-      "src": "assets/icons/icon-512x512.png",
+      "src": "assets//dice-solid-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable any"
